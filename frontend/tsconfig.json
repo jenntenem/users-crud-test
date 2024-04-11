@@ -8,6 +8,7 @@
     "strict": false,
     "noImplicitOverride": true,
     "paths": {
+      "@primeng/*": ["src/app/modules/primeng/*"],
       "@users/*": ["src/app/modules/users/*"]
     },
     "noPropertyAccessFromIndexSignature": true,
