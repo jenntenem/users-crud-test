@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\controllers\\departamentocargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\controllers\\departamentocargocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\data\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|c:\\users\\generico01\\documents\\projects\\users-crud-test\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D001CDE0-BD5E-4375-8D53-1AE3159DECC7}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DepartamentoCargoController.cs",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Controllers\\DepartamentoCargoController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\DepartamentoCargoController.cs",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Controllers\\DepartamentoCargoController.cs",
+              "RelativeToolTip": "backend\\Controllers\\DepartamentoCargoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T15:10:43.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "backend\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowCgAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T15:01:38.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "backend.http",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\backend.http",
+              "RelativeDocumentMoniker": "backend\\backend.http",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\backend.http",
+              "RelativeToolTip": "backend\\backend.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-04-11T14:49:12.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\appsettings.json",
+              "RelativeToolTip": "backend\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-11T14:43:00.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Data\\DBContext.cs",
+              "RelativeDocumentMoniker": "backend\\Data\\DBContext.cs",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Data\\DBContext.cs",
+              "RelativeToolTip": "backend\\Data\\DBContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:42:28.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Generico01\\Documents\\Projects\\users-crud-test\\backend\\backend\\Program.cs",
+              "RelativeToolTip": "backend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T14:40:08.809Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
