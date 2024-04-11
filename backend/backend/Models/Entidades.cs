@@ -7,11 +7,13 @@
             public int Id { get; set; }
             public string usuario { get; set; }
             public string primerNombre { get; set; }
-            public string segundoNombre { get; set; }
+            public string? segundoNombre { get; set; }
             public string primerApellido { get; set; }
-            public string segundoApellido { get; set; }
+            public string? segundoApellido { get; set; }
             public int idDepartamento { get; set; }
             public int idCargo { get; set; }
+            public Boolean activo {  get; set; }
+
         }
 
         public class Administracion
@@ -20,7 +22,8 @@
             public string codigo { get; set; }
             public string nombre { get; set; }
             public Boolean activo { get; set; }
-            public string idUsuarioCreacion { get; set; }
+            public int idUsuarioCreacion { get; set; }
+
         }
 
         public class Departamento: Administracion { }

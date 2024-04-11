@@ -6,9 +6,11 @@ namespace backend.Controllers
     [Route("departamentos")]
     public class DepartamentosController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        [Route("")]
+        public dynamic Index()
         {
-            return View();
+            return Ok();
         }
     }
 }
