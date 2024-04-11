@@ -10,9 +10,10 @@ import { PrimengModule } from '@primeng/primeng.module';
 import { UsersComponent } from './pages/users/users.component';
 
 // Components
+import { UserComponent } from './conponents/user/user.component';
 
 @NgModule({
-  declarations: [UsersComponent],
+  declarations: [UsersComponent, UserComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

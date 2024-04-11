@@ -1,0 +1,129 @@
+<p-dialog
+  [header]="tipo + ' usuario'"
+  [(visible)]="visible"
+  [style]="{ width: '45vw' }"
+  [maximizable]="true"
+  (onHide)="onHideDialog()"
+>
+  <form [formGroup]="formUser">
+    <div class="p-field">
+      <!--DEPARTAMENTO Y CARGO-->
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="idDepartamento">Departamento:</label>
+          <p-dropdown
+            formControlName="idDepartamento"
+            optionLabel="nombre"
+            optionValue="id"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+        <div class="field col">
+          <label for="idCargo">Cargo:</label>
+          <p-dropdown
+            formControlName="idCargo"
+            optionLabel="nombre"
+            optionValue="id"
+            styleClass="w-full"
+          ></p-dropdown>
+        </div>
+      </div>
+
+      <!--USUARIO Y EMAIL-->
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="usuario">Usuario:</label>
+          <input
+            formControlName="usuario"
+            #user
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="user.value = user.value?.trim()"
+          />
+        </div>
+        <div class="field col">
+          <label for="email">Email:</label>
+          <input
+            formControlName="email"
+            #email
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="email.value = email.value?.trim()"
+          />
+        </div>
+      </div>
+
+      <!--NOMBRES-->
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="primerNombre">Primer nombre:</label>
+          <input
+            formControlName="primerNombre"
+            #primerNombre
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="primerNombre.value = primerNombre.value?.trim()"
+          />
+        </div>
+        <div class="field col">
+          <label for="segundoNombre">Segundo nombre:</label>
+          <input
+            formControlName="segundoNombre"
+            #segundoNombre
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="segundoNombre.value = segundoNombre.value?.trim()"
+          />
+        </div>
+      </div>
+
+      <!--APELLIDOS-->
+      <div class="formgrid grid">
+        <div class="field col">
+          <label for="primerApellido">Primer apellido:</label>
+          <input
+            formControlName="primerApellido"
+            #primerApellido
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="primerApellido.value = primerApellido.value?.trim()"
+          />
+        </div>
+        <div class="field col">
+          <label for="segundoApellido">Segundo apellido:</label>
+          <input
+            formControlName="segundoApellido"
+            #segundoApellido
+            type="text"
+            pInputText
+            class="col-8 w-full"
+            (blur)="segundoApellido.value = segundoApellido.value?.trim()"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- Buttons -->
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      type="button"
+      label="tipo === TipoModificador.Crear ? 'Registrar' : 'Modificar'"
+      icon="pi pi-check"
+      class="p-button-raised p-button-success p-button-text p-button-sm"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Cancelar"
+      icon="pi pi-times"
+      class="p-button-raised p-button-danger p-button-text p-button-sm"
+      (click)="onHideDialog()"
+    ></button>
+  </ng-template>
+</p-dialog>

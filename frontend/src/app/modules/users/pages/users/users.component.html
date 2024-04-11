@@ -22,6 +22,7 @@
       label="Crear usuario"
       icon="pi pi-plus"
       class="p-button-help"
+      (click)="createUser()"
     ></button>
   </ng-template>
 </p-toolbar>
@@ -87,3 +88,14 @@
     </div>
   </ng-template>
 </p-table>
+
+<!-- DIALOG USER -->
+<app-user
+  *ngIf="showUserDialog"
+  [visible]="showUserDialog"
+  [tipo]="typeModifierDialog"
+  (onHide)="onHideDialog()"
+></app-user>
+
+<!--CONFIRM DIALOG-->
+<p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>

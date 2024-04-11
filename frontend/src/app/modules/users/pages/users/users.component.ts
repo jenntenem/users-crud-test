@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TipoModificador } from '@users/models/user.model';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-users',
@@ -10,9 +12,14 @@ export class UsersComponent {
   users!: any[];
   user!: any;
   selectedUsers!: any[] | null;
-  showUserDialog: boolean = false;
 
-  constructor() {}
+  showUserDialog: boolean = false;
+  typeModifierDialog: TipoModificador;
+
+  constructor(
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService
+  ) {}
 
   ngOnInit() {
     this.loadUserDataTable();
@@ -36,10 +43,34 @@ export class UsersComponent {
     ];
   }
 
-  openNew() {}
+  onHideDialog() {
+    this.showUserDialog = false;
+    this.typeModifierDialog = null;
+  }
 
-  deleteSelectedProducts() {}
+  createUser() {
+    this.showUserDialog = true;
+    this.typeModifierDialog = TipoModificador.Crear;
+  }
 
-  editUser(user) {}
-  deleteUser(user) {}
+  editUser(user) {
+    this.showUserDialog = true;
+    this.typeModifierDialog = TipoModificador.Editar;
+  }
+
+  deleteUser(user) {
+    this.confirmationService.confirm({
+      message: '¿Estás seguro que deseas eliminar el usuario?',
+      header: 'Confirm',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Successful',
+          detail: 'Usuario Eliminado',
+          life: 3000,
+        });
+      },
+    });
+  }
 }
