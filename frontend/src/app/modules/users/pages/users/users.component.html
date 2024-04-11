@@ -1,1 +1,89 @@
-<p>users works!</p>
+<p>Módulo de Administración</p>
+<h3>Administración de Usuarios</h3>
+<!-- FILTROS -->
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="left">
+    <p-dropdown
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="Seleccione un departamento"
+    ></p-dropdown>
+    <p-dropdown
+      optionLabel="name"
+      [showClear]="true"
+      placeholder="Selececcione un cargo"
+    ></p-dropdown>
+  </ng-template>
+
+  <ng-template pTemplate="right">
+    <button
+      pButton
+      pRipple
+      label="Crear usuario"
+      icon="pi pi-plus"
+      class="p-button-help"
+    ></button>
+  </ng-template>
+</p-toolbar>
+
+<!--VISUALIZACION DE DATA-->
+<p-table
+  #dt
+  [value]="users"
+  [rows]="10"
+  [paginator]="true"
+  [globalFilterFields]="[
+    'name',
+    'country.name',
+    'representative.name',
+    'status'
+  ]"
+  [tableStyle]="{ 'min-width': '75rem' }"
+  [(selection)]="selectedUsers"
+  [rowHover]="true"
+  dataKey="id"
+  [columns]="cols"
+>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" style="text-align: center">
+        {{ col.header }}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-user let-columns="columns">
+    <tr>
+      <td
+        *ngFor="let col of columns"
+        [style]="{
+          'text-align': col.field === 'acciones' ? 'center' : ''
+        }"
+      >
+        {{ user[col.field] }}
+        <ng-container *ngIf="col.field === 'acciones'">
+          <button
+            pButton
+            pRipple
+            label="Editar"
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success mr-2"
+            (click)="editUser(user)"
+          ></button>
+          <button
+            pButton
+            pRipple
+            label="Eliminar"
+            icon="pi pi-trash"
+            class="p-button-rounded p-button-warning"
+            (click)="deleteUser(user)"
+          ></button>
+        </ng-container>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="flex align-items-center justify-content-between">
+      Total registros: {{ users ? users.length : 0 }}.
+    </div>
+  </ng-template>
+</p-table>

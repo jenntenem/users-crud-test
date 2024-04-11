@@ -1,17 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersRoutingModule } from './users-routing.module';
+
+// PrimeNG
+import { PrimengModule } from '@primeng/primeng.module';
+
+// Pages
 import { UsersComponent } from './pages/users/users.component';
 
+// Components
 
 @NgModule({
-  declarations: [
-    UsersComponent
-  ],
+  declarations: [UsersComponent],
   imports: [
     CommonModule,
-    UsersRoutingModule
-  ]
+    UsersRoutingModule,
+    PrimengModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class UsersModule { }
+export class UsersModule {}
