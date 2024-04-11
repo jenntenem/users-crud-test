@@ -75,7 +75,7 @@ namespace backend.Controllers
             // Convert DTO to Domain Global
             var userDomainModel = new Usuario
             {
-                primerNombre = body.primerNombre ?? ,
+                primerNombre = body.primerNombre,
                 segundoNombre = body.segundoNombre,
                 primerApellido = body.primerApellido,
                 segundoApellido = body.segundoApellido,
