@@ -1,32 +1,33 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
-
-    public class AdministradorController : ControllerBase
+    [ApiController]
+    [Route("cargos")]
+    public class CargosController : ControllerBase
     {
-        // GET: Usuario
+        // GET: cargos
         [HttpGet]
         [Route("")]
-        public dynamic GetAdministradores()
+        public dynamic GetCargos()
         {
             return Ok();
         }
 
-        // GET: Usuario/5
+        // GET: cargos/5
         [HttpGet]
         [Route("{id}")]
-        public dynamic GetAdministrador(int Id)
+        public dynamic getCargoById(int Id)
         {
             return Ok();
         }
 
-
-        // POST: Usuario/Create
+        // POST: cargos/
         [HttpPost]
         [Route("")]
         [ValidateAntiForgeryToken]
-        public dynamic CreateUser(IFormCollection collection)
+        public dynamic CreateCargo(IFormCollection collection)
         {
             try
             {
@@ -38,10 +39,10 @@ namespace backend.Controllers
             }
         }
 
-        // PUT: Usuario/5
+        // PUT: cargos/5
         [HttpPut]
         [Route("{id}")]
-        public ActionResult EditUser(int id)
+        public ActionResult EditCargos(int id)
         {
             return Ok();
         }
@@ -49,9 +50,10 @@ namespace backend.Controllers
         // DELETE: UsuarioController/5
         [HttpDelete]
         [Route("{id}")]
-        public ActionResult DeleteUser(int id)
+        public ActionResult DeleteCargos(int id)
         {
             return Ok();
         }
+
     }
 }

@@ -14,7 +14,7 @@
             public int idCargo { get; set; }
         }
 
-        public class Administrador
+        public class Administracion
         {
             public int Id { get; set; }
             public string codigo { get; set; }
@@ -23,8 +23,8 @@
             public string idUsuarioCreacion { get; set; }
         }
 
-        public class Departamento: Administrador { }
-        public class Cargo : Administrador { }
+        public class Departamento: Administracion { }
+        public class Cargo : Administracion { }
     }
 }
 
