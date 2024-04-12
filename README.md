@@ -35,3 +35,6 @@
 
 ## Visualizacion del proyecto
 * Las imágenes de la ejecución se ubican de la carpeta raíz, en el directorio `assets`
+
+## Imagenes
+![imgCRUD](https://github.com/jenntenem/users-crud-test/blob/main/assets/1%20CRUD%20MODULO%20USUARIOS.png)
