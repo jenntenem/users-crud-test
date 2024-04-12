@@ -13,6 +13,7 @@
           <label for="idDepartamento">Departamento:</label>
           <p-dropdown
             formControlName="idDepartamento"
+            [options]="departmentList"
             optionLabel="nombre"
             optionValue="id"
             styleClass="w-full"
@@ -22,6 +23,7 @@
           <label for="idCargo">Cargo:</label>
           <p-dropdown
             formControlName="idCargo"
+            [options]="workStationList"
             optionLabel="nombre"
             optionValue="id"
             styleClass="w-full"
@@ -113,9 +115,10 @@
     <button
       pButton
       type="button"
-      label="tipo === TipoModificador.Crear ? 'Registrar' : 'Modificar'"
+      [label]="tipo === 'Crear' ? 'Registrar' : 'Modificar'"
       icon="pi pi-check"
       class="p-button-raised p-button-success p-button-text p-button-sm"
+      (click)="onSaveUser()"
     ></button>
     <button
       pButton
