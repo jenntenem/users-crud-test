@@ -12,7 +12,7 @@
             public string? segundoApellido { get; set; }
             public int idDepartamento { get; set; }
             public int idCargo { get; set; }
-            public Boolean activo {  get; set; }
+            public Boolean activo {  get; set; }  = true;
 
         }
 
@@ -21,7 +21,7 @@
             public int Id { get; set; }
             public string codigo { get; set; }
             public string nombre { get; set; }
-            public Boolean activo { get; set; }
+            public Boolean activo { get; set; } = true;
             public int idUsuarioCreacion { get; set; }
 
         }
