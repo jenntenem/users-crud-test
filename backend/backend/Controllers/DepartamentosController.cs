@@ -6,7 +6,7 @@ namespace backend.Controllers
 {
     [ApiController]
     [Route("departamentos")]
-    public class DepartamentosController : Controller
+    public class DepartamentosController : ControllerBase
     {
         private readonly DBContext dbContext;
 
