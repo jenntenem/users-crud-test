@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
-import { TipoModificador } from '@users/models/user.model';
+import {
+  Cargo,
+  Departamento,
+  TipoModificador,
+  Usuario,
+} from '@users/models/user.model';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { UsersService } from '../../services/users.service';
+import { DepartmentsService } from '../../services/departments.service';
+import { WorkstationsService } from '@users/services/workstations.service';
 
 @Component({
   selector: 'app-users',
@@ -9,20 +17,37 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 })
 export class UsersComponent {
   cols: any[];
-  users!: any[];
-  user!: any;
+  users!: Usuario[];
+  user!: Usuario;
   selectedUsers!: any[] | null;
 
   showUserDialog: boolean = false;
   typeModifierDialog: TipoModificador;
 
+  departmentList: Departamento[];
+  workStationList: Cargo[];
+  idDepartamento: number;
+  idCargo: number;
+
   constructor(
     private messageService: MessageService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private userService: UsersService,
+    private deptService: DepartmentsService,
+    private wsService: WorkstationsService
   ) {}
 
   ngOnInit() {
     this.loadUserDataTable();
+    this.loadUserData();
+
+    this.deptService.getAllDepartments().subscribe((data) => {
+      this.departmentList = data as Departamento[];
+    });
+
+    this.wsService.getAllWorkStations().subscribe((data) => {
+      this.workStationList = data as Cargo[];
+    });
   }
 
   loadUserDataTable(): void {
@@ -33,19 +58,26 @@ export class UsersComponent {
       { header: 'Departamento', field: 'departamento' },
       { header: 'Cargo', field: 'cargo' },
       { header: 'Email', field: 'email' },
+      { header: 'Estado', field: 'activo' },
       { header: 'Acciones', field: 'acciones' },
     ];
+  }
 
-    this.users = [
-      {
-        usuario: 'asdas',
-      },
-    ];
+  loadUserData(): void {
+    this.userService.getAllUsers().subscribe((data) => {
+      this.users = data as Usuario[];
+      this.selectedUsers = data as Usuario[];
+    });
   }
 
   onHideDialog() {
     this.showUserDialog = false;
     this.typeModifierDialog = null;
+    this.user = null;
+
+    this.idCargo = null;
+    this.idDepartamento = null;
+    this.loadUserData();
   }
 
   createUser() {
@@ -53,17 +85,22 @@ export class UsersComponent {
     this.typeModifierDialog = TipoModificador.Crear;
   }
 
-  editUser(user) {
+  editUser(user: Usuario) {
     this.showUserDialog = true;
     this.typeModifierDialog = TipoModificador.Editar;
+    this.user = user;
   }
 
-  deleteUser(user) {
+  deleteUser(user: Usuario) {
     this.confirmationService.confirm({
       message: '¿Estás seguro que deseas eliminar el usuario?',
       header: 'Confirm',
       icon: 'pi pi-exclamation-triangle',
-      accept: () => {
+      accept: async () => {
+        await this.userService.deleteUser(user.id).subscribe((u) => {
+          this.loadUserData();
+        });
+
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
@@ -72,5 +109,15 @@ export class UsersComponent {
         });
       },
     });
+  }
+
+  filterDataTable(): void {
+    this.selectedUsers = this.users.filter((u) =>
+      !this.idDepartamento && !this.idCargo
+        ? true
+        : this.idDepartamento && this.idCargo
+        ? u.idDepartamento == this.idDepartamento && u.idCargo == this.idCargo
+        : u.idDepartamento == this.idDepartamento || u.idCargo == this.idCargo
+    );
   }
 }

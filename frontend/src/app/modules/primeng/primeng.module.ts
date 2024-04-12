@@ -14,6 +14,7 @@ import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { ToolbarModule } from 'primeng/toolbar';
+import { ToastModule } from 'primeng/toast';
 
 var components = [
   CommonModule,
@@ -30,6 +31,7 @@ var components = [
   DropdownModule,
   TableModule,
   ToolbarModule,
+  ToastModule,
 ];
 
 @NgModule({

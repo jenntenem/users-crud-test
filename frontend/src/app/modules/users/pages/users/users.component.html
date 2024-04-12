@@ -4,14 +4,24 @@
 <p-toolbar styleClass="mb-4 gap-2">
   <ng-template pTemplate="left">
     <p-dropdown
-      optionLabel="name"
+      optionLabel="departamento"
+      [options]="departmentList"
+      [(ngModel)]="idDepartamento"
+      optionLabel="nombre"
+      optionValue="id"
       [showClear]="true"
       placeholder="Seleccione un departamento"
+      (onChange)="filterDataTable()"
     ></p-dropdown>
     <p-dropdown
-      optionLabel="name"
+      optionLabel="cargo"
+      [options]="workStationList"
+      [(ngModel)]="idCargo"
+      optionLabel="nombre"
+      optionValue="id"
       [showClear]="true"
       placeholder="Selececcione un cargo"
+      (onChange)="filterDataTable()"
     ></p-dropdown>
   </ng-template>
 
@@ -30,7 +40,7 @@
 <!--VISUALIZACION DE DATA-->
 <p-table
   #dt
-  [value]="users"
+  [value]="selectedUsers"
   [rows]="10"
   [paginator]="true"
   [globalFilterFields]="[
@@ -40,8 +50,6 @@
     'status'
   ]"
   [tableStyle]="{ 'min-width': '75rem' }"
-  [(selection)]="selectedUsers"
-  [rowHover]="true"
   dataKey="id"
   [columns]="cols"
 >
@@ -60,7 +68,13 @@
           'text-align': col.field === 'acciones' ? 'center' : ''
         }"
       >
-        {{ user[col.field] }}
+        {{
+          col.field != "activo"
+            ? user[col.field]
+            : user[col.field]
+            ? "ACTIVO"
+            : "DESACTIVO"
+        }}
         <ng-container *ngIf="col.field === 'acciones'">
           <button
             pButton
@@ -92,6 +106,7 @@
 <!-- DIALOG USER -->
 <app-user
   *ngIf="showUserDialog"
+  [user]="user"
   [visible]="showUserDialog"
   [tipo]="typeModifierDialog"
   (onHide)="onHideDialog()"
@@ -99,3 +114,4 @@
 
 <!--CONFIRM DIALOG-->
 <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+<p-toast></p-toast>
